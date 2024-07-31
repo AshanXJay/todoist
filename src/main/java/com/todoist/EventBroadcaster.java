@@ -54,7 +54,7 @@ public class EventBroadcaster {
      * @throws IOException if an I/O error occurs
      * @throws GeneralSecurityException if a security error occurs
      */
-    public void broadcastEvent(com.todoist.Event event) throws IOException, GeneralSecurityException {
+    public boolean broadcastEvent(com.todoist.Event event) throws IOException, GeneralSecurityException {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'+05:30'"); // Date format for Google Calendar
 
@@ -91,5 +91,6 @@ public class EventBroadcaster {
 
         // Print the ID of the created event
         System.out.println("Event created: " + createdEvent.getId());
+        return true;
     }
 }

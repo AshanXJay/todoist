@@ -33,11 +33,15 @@ public class EventManager {
         
         // If event is not null, save and broadcast it
         if (event != null) {
-            storage.saveEvent(event); // Save event to storage
-            broadcaster.broadcastEvent(event); // Broadcast the event
+            if(broadcaster.broadcastEvent(event)) {
+                storage.saveEvent(event); // Save event to storage
+                System.out.println("Event saved and broadcasted!");
+            } else {
+                System.out.println("Event not saved and broadcasted!");
+            }
         } else {
             // If event is null, print a message
-            System.out.println("Event not saved and broadcasted!");
+            System.out.println("Event couldn't create!");
         }
     }
 }

@@ -58,7 +58,7 @@ public class EventInput {
         }
 
         // Print confirmation message
-        System.out.println("Event Saved!");
+        System.out.println("Event Creation in progress...!");
 
         // Return a new Event object with the provided details
         return new Event(title, startDate, endDate); // Assuming Event constructor takes these parameters
